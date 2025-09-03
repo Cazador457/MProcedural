@@ -22,8 +22,6 @@ public class Map
         }
         return cordenadas;     
     }
-    
-
     public void Paint(List<Vector3Int>cordenadas,Tile tile,Tilemap tilemap)
     {
         foreach (var coordenada in cordenadas)
@@ -33,7 +31,7 @@ public class Map
     }
 
 
-
+    //Ejercicios
     public List<Vector3Int> GetOriginRectangle1(int higth, int weigth)
     {
         List<Vector3Int> cordenadas = new List<Vector3Int>();

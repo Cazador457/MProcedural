@@ -5,9 +5,10 @@ using UnityEngine.Tilemaps;
 public class TilemapController : MonoBehaviour
 {
     //
-    public Map map;
+    public Map dibujar;
     public int higth;
     public int weigth;
+    public int length;
     Vector3Int cordenada = new Vector3Int(0, 0, 0);
     public Tile tile;
     void Start()
@@ -45,7 +46,8 @@ public class TilemapController : MonoBehaviour
 
     public void Rectangle()
     {
-        map.GetOriginRectangle(higth,weigth);
-        Vector3Int fill = new Vector3Int();
+        dibujar.GetOriginRectangle(higth,weigth);
+        
+        //dibujar.Paint(cordenada,tile,tilemap);
     }
 }
