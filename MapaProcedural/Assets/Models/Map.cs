@@ -1,9 +1,83 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
+using NUnit.Framework;
+using Unity.Burst.CompilerServices;
+using UnityEngine.UIElements;
+using System.Drawing;
 
 public class Map
 {
+    public enum MapType {Rectangle,Triangle,Line,Circle};
+    private Vector2Int _origin;
+    private Vector2Int _size;
+    private Tilemap _tilemap;
+    private MapType _type;
+
+     
+
+    public Map(Vector2Int origin,Vector2Int size,Tilemap tilemap, MapType type)
+    {
+        _origin = origin;
+        _size = size;
+        _tilemap = tilemap;
+        _type = type;
+    }
+
+    public List<Vector3Int> GenerateCoordinates()
+    {
+        List<Vector3Int> cordenadas = new List<Vector3Int>();
+        switch (_type)
+        {
+            case MapType.Rectangle:
+                {
+                    
+                    for (int x = _origin.x; x < _size.x+_origin.x; x++)
+                    {
+                        for (int y = _origin.y; y < _size.y; y++)
+                        {
+                            Vector3Int cordenada = new Vector3Int(x, y, 0);
+                            cordenadas.Add(cordenada);
+                        }
+                    }
+                    return cordenadas;
+                }
+            /*case MapType.Triangle:
+                {
+
+                }
+                break;
+            case MapType.Line:
+                {
+                    List<Vector3Int> line = new List<Vector3Int>();
+                    for (int x = 0; x < length; x++)
+                    {
+                        for (int y = 0; y < length; y++)
+                        {
+                            Vector3Int coordenada = new Vector3Int(x, y, 0);
+                            line.Add(coordenada);
+                        }
+                    }
+                    return line;
+                }
+                break;
+            case MapType.Circle:
+                {
+
+                }
+                break;*/
+        }
+        return cordenadas;
+    }
+
+    public void Render(List<Vector3Int> cordenadas, Tile tile)
+    {
+        foreach (var coordenada in cordenadas)
+        {
+            _tilemap.SetTile(coordenada, tile);
+        }
+    }
+    /*
     public TilemapController controller;
     public Map()
     {
@@ -20,7 +94,7 @@ public class Map
                 cordenadas.Add(cordenada);
             }
         }
-        return cordenadas;     
+        return cordenadas;
     }
     public void Paint(List<Vector3Int>cordenadas,Tile tile,Tilemap tilemap)
     {
@@ -73,4 +147,5 @@ public class Map
         }
         return triangle;
     }
+    */
 }
