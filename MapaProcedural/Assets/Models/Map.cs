@@ -42,30 +42,45 @@ public class Map
                     }
                     return cordenadas;
                 }
-            /*case MapType.Triangle:
+            case MapType.Triangle:
                 {
-
-                }
-                break;
-            case MapType.Line:
-                {
-                    List<Vector3Int> line = new List<Vector3Int>();
-                    for (int x = 0; x < length; x++)
+                    for (int x = _origin.x; x < _size.x + _origin.x; x++)
                     {
-                        for (int y = 0; y < length; y++)
+                        for (int y = _origin.y; y < _size.y; y++)
                         {
-                            Vector3Int coordenada = new Vector3Int(x, y, 0);
-                            line.Add(coordenada);
+                            Vector3Int cordenada = new Vector3Int(x, y, 0);
+                            cordenadas.Add(cordenada);
                         }
                     }
-                    return line;
+                    return cordenadas;
                 }
-                break;
+                
+            case MapType.Line:
+                {
+                    for (int x = _origin.x; x < _size.x; x++)
+                    {
+                        for (int y = _origin.y; y < _size.y; y++)
+                        {
+                            Vector3Int cordenada = new Vector3Int(x, y, 0);
+                            cordenadas.Add(cordenada);
+                        }
+                    }
+                    return cordenadas;
+                }
+                
             case MapType.Circle:
                 {
-
+                    for (int x = _origin.x; x < _size.x + _origin.x; x++)
+                    {
+                        for (int y = _origin.y; y < _size.y; y++)
+                        {
+                            Vector3Int cordenada = new Vector3Int(x, y, 0);
+                            cordenadas.Add(cordenada);
+                        }
+                    }
+                    return cordenadas;
                 }
-                break;*/
+                
         }
         return cordenadas;
     }

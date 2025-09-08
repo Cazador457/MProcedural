@@ -2731,11 +2731,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TilemapController
   mapSize:
-  - {x: 5, y: 3}
-  - {x: 8, y: 4}
+  - {x: 5, y: 5}
+  - {x: 12, y: 4}
+  - {x: 8, y: 8}
+  - {x: 10, y: 10}
   mapOrigin:
   - {x: 0, y: 0}
-  - {x: 7, y: 4}
+  - {x: 5, y: 5}
+  - {x: 17, y: 3}
+  - {x: 25, y: 2}
   tiles:
   - {fileID: 11400000, guid: 4437893c9238d3744b8a52611c887ad6, type: 2}
   - {fileID: 11400000, guid: 3d1209ea9941b4242bd92cc61dbd0d7c, type: 2}
@@ -2748,7 +2752,7 @@ Transform:
   m_GameObject: {fileID: 1193981129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.72702, y: 0.73473, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

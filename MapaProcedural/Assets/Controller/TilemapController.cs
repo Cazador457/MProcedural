@@ -43,26 +43,35 @@ public class TilemapController : MonoBehaviour
         tilemap.transform.parent = grid.transform;
 
         Tilemap map = tilemap.GetComponent<Tilemap>();
+        Line(map);
         Rectangle(map);
+        Circle(map);
+        Triangle(map);
     }
     private void Rectangle(Tilemap tilemap)
     {
-        Map map = new Map(mapOrigin[0], mapSize[0],tilemap, MapType.Rectangle);
+        Map map = new Map(mapOrigin[1], mapSize[1],tilemap, MapType.Rectangle);
         List<Vector3Int> coordenadas = map.GenerateCoordinates();
         map.Render(coordenadas, tiles[0]);
         
     }
-    private void Triangle()
+    private void Triangle(Tilemap tilemap)
     {
-
+        Map map = new Map(mapOrigin[3], mapSize[3], tilemap, MapType.Rectangle);
+        List<Vector3Int> coordenadas = map.GenerateCoordinates();
+        map.Render(coordenadas, tiles[0]);
     }
-    private void Line()
+    private void Line(Tilemap tilemap)
     {
-
+        Map map = new Map(mapOrigin[0], mapSize[0], tilemap, MapType.Rectangle);
+        List<Vector3Int> coordenadas = map.GenerateCoordinates();
+        map.Render(coordenadas, tiles[0]);
     }
-    private void Circle()
+    private void Circle(Tilemap tilemap)
     {
-
+        Map map = new Map(mapOrigin[2], mapSize[2], tilemap, MapType.Rectangle);
+        List<Vector3Int> coordenadas = map.GenerateCoordinates();
+        map.Render(coordenadas, tiles[0]);
     }
 
 
