@@ -2711,6 +2711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193981131}
   - component: {fileID: 1193981130}
+  - component: {fileID: 1193981132}
   m_Layer: 0
   m_Name: AutomateGrid
   m_TagString: Untagged
@@ -2731,7 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TilemapController
   mapSize:
-  - {x: 5, y: 5}
+  - {x: 0, y: 5}
   - {x: 12, y: 4}
   - {x: 8, y: 8}
   - {x: 10, y: 10}
@@ -2741,8 +2742,10 @@ MonoBehaviour:
   - {x: 17, y: 3}
   - {x: 25, y: 2}
   tiles:
+  - {fileID: 11400000, guid: 3d1209ea9941b4242bd92cc61dbd0d7c, type: 2}
   - {fileID: 11400000, guid: 4437893c9238d3744b8a52611c887ad6, type: 2}
   - {fileID: 11400000, guid: 3d1209ea9941b4242bd92cc61dbd0d7c, type: 2}
+  - {fileID: 11400000, guid: 4437893c9238d3744b8a52611c887ad6, type: 2}
 --- !u!4 &1193981131
 Transform:
   m_ObjectHideFlags: 0
@@ -2758,6 +2761,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193981132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193981129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6b03312619f4841adfec2eb21061df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TilemapInteractive
 --- !u!1 &1255491818
 GameObject:
   m_ObjectHideFlags: 0

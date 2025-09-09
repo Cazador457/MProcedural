@@ -1,8 +1,6 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static Map;
 
 
 public class TilemapController : MonoBehaviour
@@ -50,28 +48,28 @@ public class TilemapController : MonoBehaviour
     }
     private void Rectangle(Tilemap tilemap)
     {
-        Map map = new Map(mapOrigin[1], mapSize[1],tilemap, MapType.Rectangle);
+        Map map = new Map(mapOrigin[1], mapSize[1],tilemap, Map.MapType.Rectangle);
         List<Vector3Int> coordenadas = map.GenerateCoordinates();
-        map.Render(coordenadas, tiles[0]);
+        map.Render(coordenadas, tiles[1]);
         
     }
     private void Triangle(Tilemap tilemap)
     {
-        Map map = new Map(mapOrigin[3], mapSize[3], tilemap, MapType.Rectangle);
+        Map map = new Map(mapOrigin[3], mapSize[3], tilemap, Map.MapType.Triangle);
         List<Vector3Int> coordenadas = map.GenerateCoordinates();
-        map.Render(coordenadas, tiles[0]);
+        map.Render(coordenadas, tiles[3]);
     }
     private void Line(Tilemap tilemap)
     {
-        Map map = new Map(mapOrigin[0], mapSize[0], tilemap, MapType.Rectangle);
+        Map map = new Map(mapOrigin[0], mapSize[0], tilemap, Map.MapType.Line);
         List<Vector3Int> coordenadas = map.GenerateCoordinates();
         map.Render(coordenadas, tiles[0]);
     }
     private void Circle(Tilemap tilemap)
     {
-        Map map = new Map(mapOrigin[2], mapSize[2], tilemap, MapType.Rectangle);
+        Map map = new Map(mapOrigin[2], mapSize[2], tilemap, Map.MapType.Circle);
         List<Vector3Int> coordenadas = map.GenerateCoordinates();
-        map.Render(coordenadas, tiles[0]);
+        map.Render(coordenadas, tiles[2]);
     }
 
 

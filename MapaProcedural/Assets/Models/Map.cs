@@ -1,10 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
-using NUnit.Framework;
-using Unity.Burst.CompilerServices;
-using UnityEngine.UIElements;
-using System.Drawing;
 
 public class Map
 {
@@ -34,7 +30,7 @@ public class Map
                     
                     for (int x = _origin.x; x < _size.x+_origin.x; x++)
                     {
-                        for (int y = _origin.y; y < _size.y; y++)
+                        for (int y = _origin.y; y < _size.y+_origin.y; y++)
                         {
                             Vector3Int cordenada = new Vector3Int(x, y, 0);
                             cordenadas.Add(cordenada);
@@ -46,24 +42,23 @@ public class Map
                 {
                     for (int x = _origin.x; x < _size.x + _origin.x; x++)
                     {
-                        for (int y = _origin.y; y < _size.y; y++)
+                        for (int y = _origin.y; y < _size.y + _origin.y; y++)
                         {
                             Vector3Int cordenada = new Vector3Int(x, y, 0);
                             cordenadas.Add(cordenada);
                         }
+                        _size.y--;
                     }
                     return cordenadas;
                 }
                 
             case MapType.Line:
                 {
-                    for (int x = _origin.x; x < _size.x; x++)
+                    for (int x = _origin.x; x <= _size.y; x++)
                     {
-                        for (int y = _origin.y; y < _size.y; y++)
-                        {
-                            Vector3Int cordenada = new Vector3Int(x, y, 0);
-                            cordenadas.Add(cordenada);
-                        }
+                        Vector3Int cordenada = new Vector3Int(x, x, 0);
+                        cordenadas.Add(cordenada);
+                        
                     }
                     return cordenadas;
                 }
@@ -72,13 +67,30 @@ public class Map
                 {
                     for (int x = _origin.x; x < _size.x + _origin.x; x++)
                     {
-                        for (int y = _origin.y; y < _size.y; y++)
+                        for (int y = _origin.y; y < _size.y + _origin.y; y++)
                         {
                             Vector3Int cordenada = new Vector3Int(x, y, 0);
                             cordenadas.Add(cordenada);
                         }
+                        
                     }
+                    cordenadas.Remove(new Vector3Int(17, 3, 0));
+                    cordenadas.Remove(new Vector3Int(17, 4, 0));
+                    cordenadas.Remove(new Vector3Int(18, 3, 0));
+
+                    cordenadas.Remove(new Vector3Int(17, 10, 0));
+                    cordenadas.Remove(new Vector3Int(17, 9, 0));
+                    cordenadas.Remove(new Vector3Int(18, 10, 0));
+
+                    cordenadas.Remove(new Vector3Int(24, 3, 0));
+                    cordenadas.Remove(new Vector3Int(23, 3, 0));
+                    cordenadas.Remove(new Vector3Int(24, 4, 0));
+
+                    cordenadas.Remove(new Vector3Int(24, 10, 0));
+                    cordenadas.Remove(new Vector3Int(23, 10, 0));
+                    cordenadas.Remove(new Vector3Int(24, 9, 0));
                     return cordenadas;
+                    
                 }
                 
         }
